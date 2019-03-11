@@ -1,0 +1,190 @@
+/* Home Banner Area css
+============================================================================================ */
+.open {
+	.side_menu {
+		right: 0px;
+	}
+	.canvus_menu {
+		.toggle_icon {
+			span {
+				background: transparent !important;
+				&:before {
+					@include transform(rotate(45deg));
+					top: 0px;
+					@include transition(all 0.5s ease-in-out);
+				}
+				&:after {
+					width: 30px;
+					@include transform(rotate(-45deg));
+					bottom: 0px;
+					@include transition(all 0.5s ease-in-out);
+				}
+			}
+		}
+	}
+}
+
+.canvus_menu {
+	overflow: hidden;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 10;	
+	padding-top: 30px;
+	padding-bottom: 30px;
+	.float-right {
+		position: fixed;
+		width: 70px;
+		height: 70px;
+		top: 0px;
+		right: 0px;
+		background: #00bcf1;
+		display: inline-block;
+		@media (min-width: 900px){
+			display:none;
+		}
+	}
+	.toggle_icon {
+		cursor: pointer;
+		position: fixed;
+		height: 20px;
+		width: 30px;
+		top: 13px;
+		right: 20px;
+		@include transition();
+		background: transparent;
+		padding: 20px;
+		z-index: 9999;
+		span {
+			height: 2px;
+			width: 20px;
+			display: block;
+			background: #fff;
+			cursor: pointer;
+			position: absolute;
+			right: 0px;
+
+			@include transition(all 0.5s ease-in-out);
+			&:before {
+				content: "";
+				height: 2px;
+				width: 30px;
+				display: block;
+				background: #fff;
+				right: 0px;
+				top: -10px;
+				position: absolute;
+				@include transition(all 0.5s ease-in-out);
+			}
+			&:after {
+				content: "";
+				height: 2px;
+				width: 25px;
+				display: block;
+				background: #fff;
+				right: 0px;
+				bottom: -10px;
+				position: absolute;
+				@include transition(all 0.5s ease-in-out);
+			}
+		}
+	}
+}
+
+.side_menu {
+	position: fixed;
+	right: -75%;
+	top: 0px;
+	height: 100%;
+	background: $menu-bg;
+	width: 100%;
+	max-width: 60%;
+	text-align: center;
+	padding-left: 20px;
+	z-index: 2;
+	padding-right: 20px;
+	@include transition();
+	opacity: .95;
+
+	@media (min-width: 600px) and (max-width: 899px){
+		border:1px solid #ccd0d1;
+		position: fixed;
+		right: -40%;
+		top: 70px;
+		max-width: 29%;
+		height: 250px;
+		background: $menu-bg;	
+	}
+	
+	@media (min-width: 900px){
+		display:flex;
+		align-items:flex-end;
+		position:relative;
+		right:0px;
+		width:auto;
+		background:none;
+		max-width:100%;
+	}
+	
+	.menu_right {
+		margin-top: 120px;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		@include transform(translate(-50%, -50%));
+		height: 420px;
+		
+		@media (min-width: 900px){
+			display:flex;
+			flex-direction:row;
+			position:relative;
+			height:auto;
+			margin:0;
+		}
+		li {
+			margin-bottom: 25px;
+			@media (min-width: 600px) and (max-width: 899px){
+				padding-right:20px;
+
+			}
+			@media (max-width: 899px) {
+				margin-bottom: 15px;
+			}
+
+			&:last-child {
+				margin-bottom: 0px;
+			}
+			a {
+				font-size: 18px;
+				font-weight: bold;
+				color: $text-color;
+				text-transform: capitalize;
+				@media (max-width: 575px) {
+					font-size: 15px;
+				}
+				&:hover {
+					color: $text-color;
+				}
+				@media (min-width: 900px) {
+					padding-left:10px;
+					font-weight:normal;
+				}
+
+			}
+			a.active{
+				@media (min-width: 900px){
+					font-weight:bold;
+					cursor: normal;
+
+					&:hover{
+						text-decoration:none;
+					}
+				}
+			}
+			
+		}
+	}
+}
+
+/* Home Banner Area css
+============================================================================================ */
