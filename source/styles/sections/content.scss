@@ -1,0 +1,44 @@
+.content{
+	padding:20px;
+	&__text p{
+		font-family: $ff-main;
+		font-size: 1.125rem;
+		line-height: 1.5rem;
+	}
+
+	&__questions{
+		list-style: none;
+		margin-left: 15px;
+		padding-top: 2px;
+
+		&__item{
+			font-family: $ff-main;
+			font-size:1.125rem;
+			line-height: 1.5rem;
+
+		}
+
+		&__item:before{
+			content:"";
+			width:9px;
+			height:2px;
+			float:left;
+			margin:9px 6px 0 0;
+			overflow:hidden;
+		}
+
+		&__item:nth-child(3n+1):before{
+			background-color: #84c958;
+		}
+
+		&__item:nth-child(3n+2):before{
+			background-color: #1fbcf2;
+		}
+		
+		&__item:nth-child(3n+3):before{
+			background-color: #ec4577;
+		}
+	}
+
+}
+

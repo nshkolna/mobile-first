@@ -40,7 +40,7 @@
 		right: 0px;
 		background: #00bcf1;
 		display: inline-block;
-		@media (min-width: 900px){
+		@include for-desctop-up{
 			display:none;
 		}
 	}
@@ -106,7 +106,7 @@
 	@include transition();
 	opacity: .95;
 
-	@media (min-width: 600px) and (max-width: 899px){
+	@include for-tablet-only{
 		border:1px solid #ccd0d1;
 		position: fixed;
 		right: -40%;
@@ -116,7 +116,7 @@
 		background: $menu-bg;	
 	}
 	
-	@media (min-width: 900px){
+	@include for-desctop-up{
 		display:flex;
 		align-items:flex-end;
 		position:relative;
@@ -134,7 +134,7 @@
 		@include transform(translate(-50%, -50%));
 		height: 420px;
 		
-		@media (min-width: 900px){
+		@include for-desctop-up{
 			display:flex;
 			flex-direction:row;
 			position:relative;
@@ -143,7 +143,7 @@
 		}
 		li {
 			margin-bottom: 25px;
-			@media (min-width: 600px) and (max-width: 899px){
+			@include for-tablet-only{
 				padding-right:20px;
 
 			}
@@ -155,26 +155,30 @@
 				margin-bottom: 0px;
 			}
 			a {
-				font-size: 18px;
+				font-family: $ff-main;
+				font-size: 1.125rem;
 				font-weight: bold;
 				color: $text-color;
 				text-transform: capitalize;
-				@media (max-width: 575px) {
+				@include for-phone-only {
 					font-size: 15px;
 				}
 				&:hover {
 					color: $text-color;
 				}
-				@media (min-width: 900px) {
+				@include for-desctop-up {
 					padding-left:10px;
+					font-family:$ff-main;
 					font-weight:normal;
 				}
 
 			}
 			a.active{
-				@media (min-width: 900px){
+				@include for-desctop-up{
+					font-family: $ff-main;
+					font-weight: bold;
+					font-size: 1.125rem;
 					font-weight:bold;
-					cursor: normal;
 
 					&:hover{
 						text-decoration:none;

@@ -13,41 +13,14 @@
 	-ms-transition: $value;
 }
 
-@mixin placeholder {
-	&.placeholder {
-		@content;
-	}
-	&:-moz-placeholder {
-		@content;
-	}
-	&::-moz-placeholder {
-		@content;
-	}
-	&::-webkit-input-placeholder {
-		@content;
-	}
+@mixin for-phone-only{
+	@madia (max-width: 599px) {@content;}
 }
 
-@define-mixin atSmall {
-	@media (min-width: 576px) {
-		@mixin-content;
-	}
+@mixin for-tablet-only{
+	@media (min-width: 600px) and (max-width: 899px) { @content; }
 }
 
-@define-mixin atMedium {
-	@media (min-width: 768px) {
-		@mixin-content;
-	}
-}
-
-@define-mixin atLarge {
-	@media (min-width: 992px) {
-		@mixin-content;
-	}
-}
-
-@define-mixin atExtraLarge {
-	@media (min-width: 1200px) {
-		@mixin-content;
-	}
+@mixin for-desctop-up{
+	@media (min-width: 900px) { @content; }
 }

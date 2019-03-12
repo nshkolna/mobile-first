@@ -1,0 +1,16 @@
+.footer{
+	display: none;
+
+	@media (min-width: 768px){
+		display: block;
+		width: 100%;
+		text-align:right;
+		padding:10px;
+
+		&__copyright{
+			font-family: $ff-main;
+			font-size: 1rem;
+			color:$text-color;
+		}
+	}
+}
